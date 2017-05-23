@@ -1,0 +1,11 @@
+@import '../../styles/base';
+@import '../../styles/layout';
+
+.main {
+  background-color: blue;
+}
+
+.container {
+  @extend .l-container;
+  background-color: red;
+}

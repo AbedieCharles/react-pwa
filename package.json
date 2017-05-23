@@ -1,0 +1,31 @@
+{
+  "name": "react-pwa",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dashboard webpack-dev-server --progress --colors --hot",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "jest": "^20.0.3",
+    "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "sass-loader": "^6.0.5",
+    "standard": "^10.0.2",
+    "standard-loader": "^6.0.1",
+    "style-loader": "^0.17.0",
+    "webpack": "2.5.1",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
