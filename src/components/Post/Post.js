@@ -10,6 +10,7 @@ export default class Post extends Component {
           {this.props.titleLink ? <Link to={`/post/${this.props.slug}`}>{this.props.title}</Link> : this.props.title}
           <p>{this.props.excerpt}</p>
         </h2>
+        {this.props.titleLink ? '' : <div>{this.props.content}</div>}
       </article>
     )
   }

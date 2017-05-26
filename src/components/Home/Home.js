@@ -8,8 +8,7 @@ export default class Home extends Component {
   render () {
     return (
       <div>
-        Home
-        {posts.posts.map(post => <Post title={post.title} slug={post.slug} excerpt={post.excerpt} titleLink key={post.slug} />)}
+        { posts.posts.map(post => <Post title={post.title} slug={post.slug} excerpt={post.excerpt} titleLink key={post.slug} />) }
       </div>
     )
   }

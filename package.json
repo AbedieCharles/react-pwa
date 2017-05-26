@@ -9,14 +9,19 @@
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^20.0.3",
+    "jest-css-modules": "^1.1.0",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
@@ -27,5 +32,22 @@
     "webpack": "2.5.1",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.4.5"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "transform": {".*": "<rootDir>/node_modules/jest-css-modules"},
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
   }
 }

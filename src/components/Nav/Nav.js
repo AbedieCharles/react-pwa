@@ -9,11 +9,9 @@ export default class Nav extends Component {
     return (
       <ul>
         <li className={styles.item}>
-          <NavLink to='/posts' className={styles.item}>
-            Posts
+          <NavLink to='/' className={styles.item}>
+            Accueil
           </NavLink>
-        </li>
-        <li className={styles.item}>
           <NavLink to='/about' className={styles.item}>
             About
           </NavLink>

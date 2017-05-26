@@ -2,10 +2,9 @@
 @import '../../styles/layout';
 
 .main {
-  background-color: blue;
+  font-size: inherit;
 }
 
 .container {
   @extend .l-container;
-  background-color: red;
 }
