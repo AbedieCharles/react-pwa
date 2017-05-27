@@ -3,14 +3,18 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dashboard webpack-dev-server --progress --colors --hot",
+    "build": "webpack --config=webpack/webpack.prod.js -p",
+    "start": "webpack-dashboard -- webpack-dev-server --progress --colors --hot --config=webpack/webpack.dev.js",
     "test": "jest"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.1",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
@@ -20,10 +24,12 @@
     "jest-css-modules": "^1.1.0",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
+    "offline-plugin": "^4.8.1",
+    "preact": "^8.1.0",
+    "preact-compat": "^3.16.0",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
-    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "sass-loader": "^6.0.5",
     "standard": "^10.0.2",
@@ -45,7 +51,9 @@
         "statements": 50
       }
     },
-    "transform": {".*": "<rootDir>/node_modules/jest-css-modules"},
+    "transform": {
+      ".*": "<rootDir>/node_modules/jest-css-modules"
+    },
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
     }

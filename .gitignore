@@ -3,6 +3,7 @@ logs
 *.log
 npm-debug.log*
 __snapshots__/
+dist/
 
 # Runtime data
 pids
