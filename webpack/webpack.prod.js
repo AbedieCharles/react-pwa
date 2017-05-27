@@ -60,10 +60,13 @@ module.exports = {
       template: `./index.html`,
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('styles.[chunkhash:6].css'),
+    new ExtractTextPlugin({
+      filename: 'styles.[chunkhash:6].css',
+      allChunks: true
+    }),
+    new OfflinePlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
-    }),
-    new OfflinePlugin()
+    })
   ]
 }

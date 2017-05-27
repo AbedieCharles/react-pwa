@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config=webpack/webpack.prod.js -p",
-    "start": "webpack-dashboard -- webpack-dev-server --progress --colors --hot --config=webpack/webpack.dev.js",
+    "start": "webpack-dashboard -- webpack-dev-server --config=webpack/webpack.dev.js",
     "test": "jest"
   },
   "devDependencies": {
@@ -12,6 +12,7 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-preset-env": "^1.5.1",
+    "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.16",

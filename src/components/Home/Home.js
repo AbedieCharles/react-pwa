@@ -7,7 +7,7 @@ import posts from '../../../article.json'
 export default class Home extends Component {
   render () {
     return (
-      <div>
+      <div className='ici'>
         { posts.posts.map(post => <Post title={post.title} slug={post.slug} excerpt={post.excerpt} titleLink key={post.slug} />) }
       </div>
     )

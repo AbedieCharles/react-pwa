@@ -5,25 +5,21 @@ import { Route, Switch } from 'react-router-dom'
 import posts from '../../../article.json'
 
 // Components
-import Home from '../../components/Home/Home'
+import AsyncRoute from '../../components/AsyncRoute/AsyncRoute'
 import Post from '../../components/Post/Post'
-import About from '../../components/About/About'
-import PostDetail from '../../components/PostDetail/PostDetail'
-import NoMatch from '../../components/NoMatch/NoMatch'
 
 export default class Routes extends Component {
   render () {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/posts' component={Post} />
-          <Route path='/about' component={About} />
+          <Route exact path='/' component={props => <AsyncRoute props={Object.assign({}, props, posts)} loading={System.import('../Home/Home')} />} />
+          <Route path='/about' component={props => <AsyncRoute loading={System.import('../About/About')} />} />
           <Route path='/post/:slug' component={props => {
             const post = posts.posts.filter(post => props.match.params.slug === post.slug)
-            return <PostDetail post={post[0]} />
+            return <AsyncRoute props={Object.assign({}, props, {post: post[0]})} loading={System.import('../PostDetail/PostDetail')} />
           }} />
-          <Route component={NoMatch} />
+          <Route component={props => <AsyncRoute props={props} loading={System.import('../NoMatch/NoMatch')} />} />
         </Switch>
       </div>
     )
